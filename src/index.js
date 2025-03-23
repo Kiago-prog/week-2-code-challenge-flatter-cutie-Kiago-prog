@@ -8,3 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         characters.forEach(character => {
             // Create a span tag for each character and set its name
+            const characterSpan = document.createElement('span');
+            characterSpan.textContent = character.name;
