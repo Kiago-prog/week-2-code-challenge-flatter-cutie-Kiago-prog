@@ -17,3 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching characters:', error));
 });
+
+// Step 2: Show character details when clicked
+document.getElementById('character-bar').addEventListener('click', (event) => {
+    const clickedCharacter = event.target;
+
+    if (clickedCharacter.tagName === 'SPAN') {
+        const characterId = clickedCharacter.getAttribute('data-id');
