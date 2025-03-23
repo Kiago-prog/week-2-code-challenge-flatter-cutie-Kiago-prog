@@ -42,3 +42,6 @@ document.getElementById('character-bar').addEventListener('click', (event) => {
             .catch(error => console.error('Error fetching character details:', error));
     }
 });
+// Step 3: Add votes when the form is submitted
+document.getElementById('votes-form').addEventListener('submit', (event) => {
+    event.preventDefault();
