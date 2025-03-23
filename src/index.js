@@ -53,3 +53,6 @@ document.getElementById('votes-form').addEventListener('submit', (event) => {
         const detailedInfo = document.getElementById('detailed-info');
         const currentVotes = parseInt(detailedInfo.getAttribute('data-votes'), 10);
         const newVotes = currentVotes + votesToAdd;
+          // Update the votes count in the detailed info
+          detailedInfo.setAttribute('data-votes', newVotes);
+          document.getElementById('votes-count').textContent = newVotes;
