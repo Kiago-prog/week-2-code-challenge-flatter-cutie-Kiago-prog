@@ -24,3 +24,8 @@ document.getElementById('character-bar').addEventListener('click', (event) => {
 
     if (clickedCharacter.tagName === 'SPAN') {
         const characterId = clickedCharacter.getAttribute('data-id');
+              // Fetch the details of the clicked character
+              fetch(`/characters/${characterId}`)
+              .then(response => response.json())
+              .then(character => {
+                  const detailedInfo = document.getElementById('detailed-info');
