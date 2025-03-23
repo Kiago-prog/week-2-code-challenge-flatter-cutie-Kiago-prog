@@ -45,3 +45,11 @@ document.getElementById('character-bar').addEventListener('click', (event) => {
 // Step 3: Add votes when the form is submitted
 document.getElementById('votes-form').addEventListener('submit', (event) => {
     event.preventDefault();
+
+    const votesInput = document.getElementById('votes-input');
+    const votesToAdd = parseInt(votesInput.value, 10);
+
+    if (!isNaN(votesToAdd) && votesToAdd > 0) {
+        const detailedInfo = document.getElementById('detailed-info');
+        const currentVotes = parseInt(detailedInfo.getAttribute('data-votes'), 10);
+        const newVotes = currentVotes + votesToAdd;
