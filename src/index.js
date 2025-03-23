@@ -3,4 +3,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/characters') // Fetch character data from the server
     .then(response => response.json()) // Parse the response to JSON
+    .then(characters => {
+        const characterBar = document.getElementById('character-bar');
 
+        characters.forEach(character => {
+            // Create a span tag for each character and set its name
