@@ -56,3 +56,4 @@ document.getElementById('votes-form').addEventListener('submit', (event) => {
           // Update the votes count in the detailed info
           detailedInfo.setAttribute('data-votes', newVotes);
           document.getElementById('votes-count').textContent = newVotes;
+          
