@@ -11,3 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const characterSpan = document.createElement('span');
             characterSpan.textContent = character.name;
             characterSpan.setAttribute('data-id', character.id); // Store character id on span for later use
+               // Append the character name span to the character bar
+               characterBar.appendChild(characterSpan);
+            });
+        })
+        .catch(error => console.error('Error fetching characters:', error));
+});
