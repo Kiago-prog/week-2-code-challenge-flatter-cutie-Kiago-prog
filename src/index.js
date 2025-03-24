@@ -4,7 +4,7 @@ let allCharacters = [];
 let currentCharacter = null;
 
 // Wait for the DOM to load before executing code
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded'), () => {
     document.addEventListener('DOMContentLoaded', () => {
         // Get elements from the DOM
         const characterBar = document.getElementById('character-bar');
@@ -90,4 +90,4 @@ function handleResetVotes() {
 function updateVoteDisplay() {
     const voteCountEl = document.getElementById('vote-count');
     voteCountEl.textContent = currentCharacter.votes;
-  }
+  }}
