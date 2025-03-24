@@ -54,3 +54,16 @@ function displayCharacters(characters) {
       characterBar.appendChild(span);
     });
   }
+  // Display character details
+function displayCharacterDetails(character) {
+    currentCharacter = character;
+  
+    const nameEl = document.getElementById('name');
+    const imageEl = document.getElementById('image');
+    const voteCountEl = document.getElementById('vote-count');
+  
+    nameEl.textContent = character.name;
+    imageEl.src = character.image;
+    imageEl.alt = character.name;
+    voteCountEl.textContent = character.votes;
+  }
