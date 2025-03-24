@@ -4,30 +4,34 @@ let allCharacters = [];
 let currentCharacter = null;
 
 // Wait for the DOM to load before executing code
-document.addEventListener('DOMContentLoaded'), () => {
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get elements from the DOM
-        const characterBar = document.getElementById('character-bar');
-        const detailedInfo = document.getElementById('detailed-info');
-        const nameEl = document.getElementById('name');
-        const imageEl = document.getElementById('image');
-        const voteCountEl = document.getElementById('vote-count');
-        const votesForm = document.getElementById('votes-form');
-        const resetBtn = document.getElementById('reset-btn');
-          // Initialize the application
+document.addEventListener('DOMContentLoaded', () => {
+  // Get elements from the DOM
+  const characterBar = document.getElementById('character-bar');
+  const detailedInfo = document.getElementById('detailed-info');
+  const nameEl = document.getElementById('name');
+  const imageEl = document.getElementById('image');
+  const voteCountEl = document.getElementById('vote-count');
+  const votesForm = document.getElementById('votes-form');
+  const resetBtn = document.getElementById('reset-btn');
+
+  // Initialize the application
   init();
-    // Add event listener for the votes form
-    votesForm.addEventListener('submit', handleVoteSubmit);
-      // Add event listener for the reset button
+
+  // Add event listener for the votes form
+  votesForm.addEventListener('submit', handleVoteSubmit);
+
+  // Add event listener for the reset button
   resetBtn.addEventListener('click', handleResetVotes);
 });
+
 // Initialize the application
 async function init() {
     try {
       const characters = await fetchCharacters();
       allCharacters = characters;
       displayCharacters(characters);
-    } catch (error) {
+    } 
+    catch (error) {
       console.error('Error initializing application:', error);
     }
   }
@@ -54,7 +58,8 @@ function displayCharacters(characters) {
       characterBar.appendChild(span);
     });
   }
-  // Display character details
+
+// Display character details
 function displayCharacterDetails(character) {
     currentCharacter = character;
   
@@ -66,7 +71,8 @@ function displayCharacterDetails(character) {
     imageEl.src = character.image;
     imageEl.alt = character.name;
     voteCountEl.textContent = character.votes;
-  }
+}
+
   // Handle vote form submission
 function handleVoteSubmit(event) {
     event.preventDefault();
@@ -79,6 +85,7 @@ function handleVoteSubmit(event) {
       votesForm.reset();
     }
   }
+
   // Handle reset votes button click
 function handleResetVotes() {
     if (currentCharacter) {
@@ -86,8 +93,9 @@ function handleResetVotes() {
       updateVoteDisplay();
     }
   }
+
   // Update the vote display
 function updateVoteDisplay() {
     const voteCountEl = document.getElementById('vote-count');
     voteCountEl.textContent = currentCharacter.votes;
-  }}
+  }
