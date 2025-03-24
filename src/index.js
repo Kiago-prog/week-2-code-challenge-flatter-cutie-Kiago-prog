@@ -18,3 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   init();
     // Add event listener for the votes form
     votesForm.addEventListener('submit', handleVoteSubmit);
+      // Add event listener for the reset button
+  resetBtn.addEventListener('click', handleResetVotes);
+});
