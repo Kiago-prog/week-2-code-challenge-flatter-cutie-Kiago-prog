@@ -39,3 +39,18 @@ async function fetchCharacters() {
     }
     return await response.json();
   }
+  // Display characters in the character bar
+function displayCharacters(characters) {
+    const characterBar = document.getElementById('character-bar');
+    characterBar.innerHTML = '';
+  
+    characters.forEach(character => {
+      const span = document.createElement('span');
+      span.textContent = character.name;
+      span.dataset.id = character.id;
+  
+      span.addEventListener('click', () => displayCharacterDetails(character));
+  
+      characterBar.appendChild(span);
+    });
+  }
