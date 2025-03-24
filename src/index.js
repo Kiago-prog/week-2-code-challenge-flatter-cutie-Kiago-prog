@@ -14,3 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const voteCountEl = document.getElementById('vote-count');
         const votesForm = document.getElementById('votes-form');
         const resetBtn = document.getElementById('reset-btn');
+          // Initialize the application
+  init();
