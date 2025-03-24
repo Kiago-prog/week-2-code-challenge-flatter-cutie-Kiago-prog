@@ -21,3 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add event listener for the reset button
   resetBtn.addEventListener('click', handleResetVotes);
 });
+// Initialize the application
+async function init() {
+    try {
+      const characters = await fetchCharacters();
+      allCharacters = characters;
+      displayCharacters(characters);
+    } catch (error) {
+      console.error('Error initializing application:', error);
+    }
+  }
