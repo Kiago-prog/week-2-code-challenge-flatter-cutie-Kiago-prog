@@ -16,3 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const resetBtn = document.getElementById('reset-btn');
           // Initialize the application
   init();
+    // Add event listener for the votes form
+    votesForm.addEventListener('submit', handleVoteSubmit);
