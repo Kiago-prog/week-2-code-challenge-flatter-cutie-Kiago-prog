@@ -79,3 +79,10 @@ function handleVoteSubmit(event) {
       votesForm.reset();
     }
   }
+  // Handle reset votes button click
+function handleResetVotes() {
+    if (currentCharacter) {
+      currentCharacter.votes = 0;
+      updateVoteDisplay();
+    }
+  }
