@@ -86,3 +86,8 @@ function handleResetVotes() {
       updateVoteDisplay();
     }
   }
+  // Update the vote display
+function updateVoteDisplay() {
+    const voteCountEl = document.getElementById('vote-count');
+    voteCountEl.textContent = currentCharacter.votes;
+  }
