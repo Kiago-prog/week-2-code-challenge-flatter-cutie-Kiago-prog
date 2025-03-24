@@ -67,3 +67,15 @@ function displayCharacterDetails(character) {
     imageEl.alt = character.name;
     voteCountEl.textContent = character.votes;
   }
+  // Handle vote form submission
+function handleVoteSubmit(event) {
+    event.preventDefault();
+    const votesInput = document.getElementById('votes');
+    const votes = parseInt(votesInput.value);
+  
+    if (currentCharacter && !isNaN(votes)) {
+      currentCharacter.votes += votes;
+      updateVoteDisplay();
+      votesForm.reset();
+    }
+  }
